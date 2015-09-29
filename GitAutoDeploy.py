@@ -51,6 +51,7 @@ class GitAutoDeploy(BaseHTTPRequestHandler):
 
         urls = self.parseRequest()
         for url in urls:
+            print "Url received for repo: " + url
             paths = self.getMatchingPaths(url)
             for path in paths:
                 self.fetch(path)
